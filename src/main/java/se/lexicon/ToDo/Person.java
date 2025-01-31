@@ -19,4 +19,61 @@ public class Person
             this.email = email;
         }
     }
+
+    // **********************************************
+    // Getter methods
+    // **********************************************
+
+    public int getId() {
+        return Id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    // **********************************************
+    // Setter methods
+    // **********************************************
+
+    public void setFirstName(String firstName) {
+        if (firstName != null) {
+            this.firstName = firstName;
+        }
+    }
+
+    public void setLastName(String lastName) {
+        if (lastName != null) {
+            this.lastName = lastName;
+        }
+    }
+
+    public void setEmail(String email) {
+        if (email != null) {
+            this.email = email;
+        }
+    }
+
+    // **********************************************
+    // Other methods
+    // **********************************************
+
+    public String getSummary()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Id : ").append(Id + ", ")
+                .append("Name : ").append(firstName + " " + lastName + ", ")
+                .append("Email : ").append(email);
+
+        return sb.toString();
+    }
 }
