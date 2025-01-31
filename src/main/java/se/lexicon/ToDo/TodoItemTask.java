@@ -27,7 +27,7 @@ public class TodoItemTask {
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Task is --> ").append(todoItem.getSummary())
+        sb.append("Task is --> ").append(todoItem.getSummary() + "\n")
                 .append("Person assigned the task is --> ").append(assignee.getSummary());
 
         return sb.toString();
