@@ -3,20 +3,22 @@ package se.lexicon.ToDo;
 import java.time.LocalDate;
 
 public class TodoItem {
+
     private int Id;
     private String title;
-    private String description;
+    private String taskDescription;
     private LocalDate deadLine;
     private boolean done;
     private Person creator;
 
-    public TodoItem(String title, String description, LocalDate deadLine, boolean done, Person creator)
+
+    public TodoItem(String title, String taskDescription, LocalDate deadLine, boolean done, Person creator)
     {
         if (title != null && !title.isEmpty()) {
             this.title = title;
         }
-        if (description != null) {
-            this.description = description;
+        if (taskDescription != null) {
+            this.taskDescription = taskDescription;
         }
         if (deadLine != null) {
             this.deadLine = deadLine;
@@ -26,6 +28,25 @@ public class TodoItem {
         }
 
         this.done = done;
+    }
+
+    public TodoItem(String title, String taskDescription, LocalDate deadLine, boolean done, Person creator, int id)
+    {
+        if (title != null && !title.isEmpty()) {
+            this.title = title;
+        }
+        if (taskDescription != null) {
+            this.taskDescription = taskDescription;
+        }
+        if (deadLine != null) {
+            this.deadLine = deadLine;
+        }
+        if (creator != null) {
+            this.creator = creator;
+        }
+
+        this.done = done;
+        this.Id = id;
     }
 
     // **********************************************
@@ -42,7 +63,7 @@ public class TodoItem {
     }
 
     public String getTaskDescription() {
-        return description;
+        return taskDescription;
     }
 
     public LocalDate getDeadLine() {
@@ -53,13 +74,17 @@ public class TodoItem {
         return creator;
     }
 
+    public boolean isDone() {
+        return done;
+    }
+
     public String getSummary() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("Id : ").append(Id + ", ")
                 .append("Title : ").append(title + ", ")
                 .append("DeadLine : ").append(deadLine + "\n")
-                .append("Task Description --> \n").append(description);
+                .append("Task Description --> \n").append(taskDescription);
 
         return sb.toString();
     }
@@ -77,7 +102,7 @@ public class TodoItem {
 
     public void setTaskDescription(String description) {
         if (description != null) {
-            this.description = description;
+            this.taskDescription = description;
         }
     }
 

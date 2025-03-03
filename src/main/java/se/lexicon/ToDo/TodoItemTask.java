@@ -23,6 +23,11 @@ public class TodoItemTask {
         return assignee;
     }
 
+    public boolean isAssigned()
+    {
+        return assigned;
+    }
+
     public String getSummary()
     {
         StringBuilder sb = new StringBuilder();
@@ -32,10 +37,11 @@ public class TodoItemTask {
 
         return sb.toString();
     }
+
+
     // **********************************************
     // Setter methods
     // **********************************************
-
 
     public void setAssigned(boolean assigned) {
         this.assigned = assigned;

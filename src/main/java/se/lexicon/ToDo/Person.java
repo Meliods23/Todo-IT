@@ -2,6 +2,7 @@ package se.lexicon.ToDo;
 
 public class Person
 {
+    private static int sequencer = 1;
     private int Id;
     private String firstName;
     private String lastName;
@@ -18,6 +19,24 @@ public class Person
         if (email != null) {
             this.email = email;
         }
+
+        Id = sequencer;
+        sequencer++;
+    }
+
+    public Person(String firstName, String lastName, String email, int id)
+    {
+        if (firstName != null) {
+            this.firstName = firstName;
+        }
+        if (lastName != null) {
+            this.lastName = lastName;
+        }
+        if (email != null) {
+            this.email = email;
+        }
+
+        this.Id = id;
     }
 
     // **********************************************
